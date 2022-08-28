@@ -2,6 +2,21 @@ local a=tick()getgenv().Players=game:GetService'Players'getgenv().TeleportServic
 local MessageSender = require(game.Players.LocalPlayer.PlayerScripts:WaitForChild("ChatScript"):WaitForChild("ChatMain"):WaitForChild("MessageSender"))
 MessageSender:RegisterSayMessageFunction(game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 MessageSender:SendMessage("", "All")
 local LoadingTime = tick();
 local Commands, Prefix = {}, "?"
