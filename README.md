@@ -4,3 +4,14 @@ local a=tick()getgenv().Players=game:GetService'Players'getgenv().TeleportServic
 
 
 print("covax is gone cause its fucking nigger in the streets")
+
+
+
+-- reset
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(key)
+if key == "c" then
+          game.Players.LocalPlayer.Character.Head:Destroy()
+end
+end)
+-- end of reset
+
