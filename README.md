@@ -3,4 +3,4 @@ local a=tick()getgenv().Players=game:GetService'Players'getgenv().TeleportServic
 
 
 
-loadstring(game:HttpGet"https://pastebin.com/raw/gDEz0sBV")()
+print("covax is gone cause its fucking nigger in the streets")
