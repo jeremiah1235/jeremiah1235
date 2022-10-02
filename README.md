@@ -5,7 +5,7 @@ pcall(function() function igopjitler(kyileeeeilovemuhaaaaaaaa4877270210300540798
 
 
 
-print("covax is gone cause its fucking nigger in the streets")
+print("cory is such a copy cat")
 
 
 
@@ -16,3 +16,5 @@ if key == "c" then
 end
 end)
 -- end of reset
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Not-Coryu/v2/main/functions.lua"))() -- credits to cory
