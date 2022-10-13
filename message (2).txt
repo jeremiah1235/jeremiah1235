@@ -1,0 +1,281 @@
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Close = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local Pawels = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local Cyrus = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local DrPoppa = Instance.new("TextButton")
+local AntiFe = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(93, 37, 209)
+Main.BackgroundTransparency = 0.600
+Main.Position = UDim2.new(0.0370682403, 0, 0.54126215, 0)
+Main.Size = UDim2.new(0, 403, 0, 161)
+Main.Active = true
+Main.Draggable = true
+
+Close.Name = "Close"
+Close.Parent = Main
+Close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Close.Position = UDim2.new(0.898263037, 0, 0, 0)
+Close.Size = UDim2.new(0, 41, 0, 28)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextSize = 14.000
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(93, 37, 209)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(0, 362, 0, 28)
+TextLabel.Font = Enum.Font.Ubuntu
+TextLabel.Text = "The Streets gui (BM#0420)"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+
+Pawels.Name = "Pawels"
+Pawels.Parent = Main
+Pawels.BackgroundColor3 = Color3.fromRGB(93, 37, 209)
+Pawels.BackgroundTransparency = 0.500
+Pawels.Position = UDim2.new(0.0496277884, 0, 0.248447195, 0)
+Pawels.Size = UDim2.new(0, 117, 0, 24)
+Pawels.Font = Enum.Font.SourceSans
+Pawels.Text = "Pawels"
+Pawels.TextColor3 = Color3.fromRGB(0, 0, 0)
+Pawels.TextSize = 14.000
+Pawels.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet"https://raw.githubusercontent.com/pawel630/Pawels/master/Pawels.txt")()
+end)
+
+UICorner.CornerRadius = UDim.new(0.300000012, 0)
+UICorner.Parent = Pawels
+
+Cyrus.Name = "Cyrus"
+Cyrus.Parent = Main
+Cyrus.BackgroundColor3 = Color3.fromRGB(93, 37, 209)
+Cyrus.BackgroundTransparency = 0.500
+Cyrus.Position = UDim2.new(0.0496277921, 0, 0.571428597, 0)
+Cyrus.Size = UDim2.new(0, 117, 0, 24)
+Cyrus.Font = Enum.Font.SourceSans
+Cyrus.Text = "Cyrus"
+Cyrus.TextColor3 = Color3.fromRGB(0, 0, 0)
+Cyrus.TextSize = 14.000
+Cyrus.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/jeremiah1235/jeremiah1235/main/name.txt",true))();
+end)
+UICorner_2.CornerRadius = UDim.new(0.150000006, 0)
+UICorner_2.Parent = Cyrus
+
+DrPoppa.Name = "DrPoppa"
+DrPoppa.Parent = Main
+DrPoppa.BackgroundColor3 = Color3.fromRGB(93, 37, 209)
+DrPoppa.BackgroundTransparency = 0.500
+DrPoppa.Position = UDim2.new(0.436724573, 0, 0.24844721, 0)
+DrPoppa.Size = UDim2.new(0, 117, 0, 24)
+DrPoppa.Font = Enum.Font.SourceSans
+DrPoppa.Text = "AntiAim"
+DrPoppa.TextColor3 = Color3.fromRGB(0, 0, 0)
+DrPoppa.TextSize = 14.000
+DrPoppa.MouseButton1Down:connect(function()
+local bav = Instance.new("BodyAngularVelocity", game.Players.LocalPlayer.Character.Torso)
+bav.MaxTorque = Vector3.new(0, math.huge, 0)
+bav.AngularVelocity = Vector3.new(0, 500, 0)
+end)
+
+AntiFe.Name = "AntiFe"
+AntiFe.Parent = Main
+AntiFe.BackgroundColor3 = Color3.fromRGB(93, 37, 209)
+AntiFe.BackgroundTransparency = 0.500
+AntiFe.Position = UDim2.new(0.436724573, 0, 0.571428537, 0)
+AntiFe.Size = UDim2.new(0, 117, 0, 24)
+AntiFe.Font = Enum.Font.SourceSans
+AntiFe.Text = "Get items"
+AntiFe.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiFe.TextSize = 14.000
+AntiFe.MouseButton1Down:connect(function()
+local gkey = "K"
+    local ukey = "J"
+    local akey = "G"
+
+local Input = game:GetService('UserInputService')
+    local ammo = false
+    
+    game:GetService('RunService').Stepped:connect(
+    function()
+        if ammo then
+            if game.Workspace:FindFirstChild("Buy Ammo | $25") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                    game.Workspace["Buy Ammo | $25"].Head.CFrame
+            end
+        end
+    
+    end
+    )
+    
+    
+    Input.InputBegan:Connect(
+        function(hotkey)
+            if hotkey.KeyCode == Enum.KeyCode[akey] then
+                if Input:GetFocusedTextBox() == nil then
+                    local SavePos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    ammo = true
+                end
+            end
+        end
+    )
+    
+    Input.InputEnded:Connect(
+        function(hotkey)
+            if hotkey.KeyCode == Enum.KeyCode[akey]then
+                if Input:GetFocusedTextBox() == nil then
+                    ammo = false
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SavePos
+                end
+            end
+        end
+    )
+    
+    local Input = game:GetService('UserInputService')
+    local ammo = false
+    
+    game:GetService('RunService').Stepped:connect(
+    function()
+        if ammo then
+            if game.Workspace:FindFirstChild("Glock | $200") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                    game.Workspace["Glock | $200"].Head.CFrame
+            end
+        end
+    
+    end
+    )
+    
+    
+    Input.InputBegan:Connect(
+        function(hotkey)
+            if hotkey.KeyCode == Enum.KeyCode[gkey] then
+                if Input:GetFocusedTextBox() == nil then
+                    local SavePos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    ammo = true
+                end
+            end
+        end
+    )
+    
+    Input.InputEnded:Connect(
+        function(hotkey)
+            if hotkey.KeyCode == Enum.KeyCode[gkey]then
+                if Input:GetFocusedTextBox() == nil then
+                    ammo = false
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SavePos
+                end
+            end
+        end
+    )
+    
+    local Input = game:GetService('UserInputService')
+    local ammo = false
+    
+    game:GetService('RunService').Stepped:connect(
+    function()
+        if ammo then
+            if game.Workspace:FindFirstChild("Uzi | $150") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                    game.Workspace["Uzi | $150"].Head.CFrame
+            end
+        end
+    
+    end
+    )
+    
+    
+    Input.InputBegan:Connect(
+        function(hotkey)
+            if hotkey.KeyCode == Enum.KeyCode[ukey] then
+                if Input:GetFocusedTextBox() == nil then
+                    local SavePos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    ammo = true
+                end
+            end
+        end
+    )
+    
+    Input.InputEnded:Connect(
+        function(hotkey)
+            if hotkey.KeyCode == Enum.KeyCode[ukey] then
+                if Input:GetFocusedTextBox() == nil then
+                    ammo = false
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = SavePos
+                end
+            end
+        end
+    )
+    
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
+local FUCK = Color3.fromRGB(50,50,50)
+local CUNT = Color3.fromRGB(255,255,255)
+local SEX = Color3.fromRGB(86,0,232)
+local Players = game:GetService("Players")
+local LP = Players.LocalPlayer
+_G.ButtonColor = FUCK
+_G.ButtonTextColor = CUNT
+_G.ArrowColor = CUNT
+_G.PointerColor = CUNT
+_G.ToggleColor = SEX
+_G.SliderColor = CUNT
+local w = library:CreateWindow("Customization") -- Creates the window
+local b = w:CreateFolder("Keybinds") -- Creates the folder(U will put here your buttons,etc
+
+
+b:Box("Buy Ammo","string",function(value)
+   akey = value
+        cocka({
+Description = "Buy Ammo Key: " .. tostring(akey);
+Title = "big ballaz | v1";
+Duration = 5;
+});
+end)
+
+b:Box("Buy Glock","string",function(value)
+   gkey = value
+       cocka({
+Description = "Buy Glock Key: " .. tostring(gkey);
+Title = "big ballaz | v1";
+Duration = 5;
+});
+end)
+
+b:Box("Buy Uzi","string",function(value)
+   ukey = value
+        cocka({
+Description = "Buy Uzi Key: " .. tostring(ukey);
+Title = "big ballaz | v1";
+Duration = 5;
+});
+end)
+end)
+
+UICorner_3.CornerRadius = UDim.new(0.100000001, 0)
+UICorner_3.Parent = Main
+
+-- Scripts:
+
+local function GJMK_fake_script() -- Close.Script 
+	local script = Instance.new('Script', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+end
+coroutine.wrap(GJMK_fake_script)()
