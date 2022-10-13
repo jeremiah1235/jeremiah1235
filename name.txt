@@ -1,4 +1,5 @@
 
+
 local Tick = tick()
 
 -- Global Variables -- 
@@ -1054,7 +1055,7 @@ local TargetPart = AimlockTarget.FindFirstChild(AimlockTarget,'RealHumanoidRootP
 	if TargetPart and AimMode == "OldPrediction" then 
 		CFrameToReturn = TargetPart.CFrame + TargetPart.Velocity / AimbotVelocity
 	elseif TargetPart and AimMode == "Prediction" then
-		CFrameToReturn = (TargetPart.CFrame + TargetPart.Velocity / (PlayersPing < 0.26 and 5 or 7.5)) + (TargetPart.RotVelocity / (PlayersPing < 0.26 and 5 or 7.5))
+		CFrameToReturn = (TargetPart.CFrame + TargetPart.Velocity / (PlayersPing < 2.3 and 4.3 or 6.3)) + (TargetPart.RotVelocity / (PlayersPing < 2.3 and 4.3 or 6.3))
 	elseif AimlockTarget.FindFirstChild(AimlockTarget,AimMode) then 
 		CFrameToReturn = AimlockTarget[AimMode].CFrame
 	end
