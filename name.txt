@@ -90,8 +90,8 @@ local HealBotHealth = 25
 local NormalJP = 37.5
 local AutoStompRange = 50
 local NormalGravity = workspace.Gravity
-local BulletColour = ColorSequence.new(Color3.fromRGB(93,37,209))
-local EspColour = Color3.fromRGB(93,37,209)
+local BulletColour = ColorSequence.new(Color3.fromRGB(0,128,255))
+local EspColour = Color3.fromRGB(0,128,255)
  
 -- Initially Nil -- 
 
@@ -3251,7 +3251,7 @@ RunService.RenderStepped:Connect(function()
                     print("success!")
                     game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Lifetime = 5.00
                     game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Transparency = NumberSequence.new(0)
-                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Color = ColorSequence.new(Color3.fromRGB(93,37,203),Color3.fromRGB(93,37,203))
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Color = ColorSequence.new(Color3.fromRGB(0,128,255),Color3.fromRGB(0,128,255))
                     game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Name = "BulletDone"
                 end
             end
@@ -3283,7 +3283,7 @@ RunService.RenderStepped:Connect(function()
                     print("success!")
                     game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Lifetime = 1.00
                     game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Transparency = NumberSequence.new(0)
-                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Color = ColorSequence.new(Color3.fromRGB(93,37,203),Color3.fromRGB(93,37,203))
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Color = ColorSequence.new(Color3.fromRGB(0,128,255),Color3.fromRGB(0,128,255))
                     game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Name = "BulletDone"
                 end
             end
