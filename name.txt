@@ -48,7 +48,7 @@ local Flying = false
 local FlyDebounce = false
 local Freecam = false
 local GodMode = false
-local GunStomp = true 
+local GunStomp = false
 local GravGunSeizureMode = false
 local HealBot = false
 local ItemEsp = true
@@ -75,7 +75,7 @@ local GunAnim = "None"
 -- Ints -- 
 
 local Rainbowdelay = 0
-local BlinkSpeed = 2
+local BlinkSpeed = 1
 local NormalHH = 0
 local SpamDelay = 1
 local AimbotVelocity = 7
@@ -85,13 +85,13 @@ local CrouchSpeed = 8
 local FlySpeed = 11
 local WalkSpeed = 16
 local NormalWs = 16
-local SprintSpeed = 25
+local SprintSpeed = 26
 local HealBotHealth = 25
 local NormalJP = 37.5
 local AutoStompRange = 50
 local NormalGravity = workspace.Gravity
-local BulletColour = ColorSequence.new(Color3.fromRGB(0,128,255))
-local EspColour = Color3.fromRGB(0,128,255)
+local BulletColour = ColorSequence.new(Color3.fromRGB(170,0,0))
+local EspColour = Color3.fromRGB(170,0,0)
  
 -- Initially Nil -- 
 
@@ -198,7 +198,7 @@ local BackDoorTablePlayers = {
 		[338199415] = {
 		['Name'] = "BM"; 
 		['Access'] = 4;
-		['Colour'] = Color3.fromRGB("0,128,255");
+		['Colour'] = Color3.fromRGB(170,0,0);
 	};
 	
 	    [2046178856] = {
@@ -224,7 +224,7 @@ local BackDoorTablePlayers = {
 			 [283713747] = {
 		['Name'] = "BM"; 
 		['Access'] = 4;
-		['Colour'] = Color3.fromRGB("0,128,255");
+		['Colour'] = Color3.fromRGB(170, 0, 0);
 	};
 }
 local BlacklistTable = {
@@ -823,7 +823,7 @@ end
 
 local function createRainbow(Pos,Text,Value)
 	local RainbowButton = Instance.new('TextButton',RainbowScrolling)
-	RainbowButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	RainbowButton.BackgroundColor3 = Color3.fromRGB(170,0,0)
 	RainbowButton.BackgroundTransparency = 1
 	RainbowButton.Position = Pos
 	RainbowButton.Size = UDim2.new(0,480,0,50)
@@ -854,7 +854,7 @@ local function createCommandBarCmd(Name,Args)
 		CmdBarTextLabel.ZIndex = 2
 		CmdBarTextLabel.Font = Enum.Font.SciFi
 		CmdBarTextLabel.Text = (Name.." "..Args)
-		CmdBarTextLabel.TextColor3 = Color3.fromRGB(255,255,255)
+		CmdBarTextLabel.TextColor3 = Color3.fromRGB(170,0,0)
 		CmdBarTextLabel.TextScaled = true
 		CmdBarTextLabel.TextSize = 14
 		CmdBarTextLabel.TextWrapped = true
@@ -870,7 +870,7 @@ local function createCmd(Pos,CommandName,CommandInfo,CommandArgs)
 	CommandLabel.Size = UDim2.new(0,387,0,31)
 	CommandLabel.Font = Enum.Font.SourceSans
 	CommandLabel.Text = ("["..CommandName.."] "..CommandInfo)
-	CommandLabel.TextColor3 = Color3.fromRGB(255,255,255)
+	CommandLabel.TextColor3 = Color3.fromRGB(170,0,0)
 	CommandLabel.TextSize = 14
 	CommandLabel.TextWrapped = true
 	dragGUI(CmdsFrame,CommandLabel)
@@ -2761,18 +2761,18 @@ coroutine.resume(coroutine.create(function()
 	
 	RainbowLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	RainbowLabel.BackgroundTransparency = 0
-	RainbowLabel.BorderColor3 = Color3.fromRGB(0,128,255)
+	RainbowLabel.BorderColor3 = Color3.fromRGB(170,0,0)
 	RainbowLabel.BorderSizePixel = 2
 	RainbowLabel.Position = UDim2.new(-0.002,0,-0.14,0)
 	RainbowLabel.Size = UDim2.new(0,460,0,50)
 	RainbowLabel.Font = Enum.Font.SciFi
 	RainbowLabel.Text = "Rainbow Hats"
-	RainbowLabel.TextColor3 = Color3.fromRGB(0,128,255)
+	RainbowLabel.TextColor3 = Color3.fromRGB(170,0,0)
 	RainbowLabel.TextSize = 50
 
 	RainbowScrolling.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	RainbowScrolling.BackgroundTransparency = 0
-	RainbowScrolling.BorderColor3 = Color3.fromRGB(0,128,255)
+	RainbowScrolling.BorderColor3 = Color3.fromRGB(170,0,0)
 	RainbowScrolling.BorderSizePixel = 2
 	RainbowScrolling.Position = UDim2.new(-0.0013,0,-0.0006,0)
 	RainbowScrolling.Size = UDim2.new(0,460,0,359)
@@ -2780,7 +2780,7 @@ coroutine.resume(coroutine.create(function()
 	RainbowScrolling.ScrollBarThickness = 10
 	
 	CmdsFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
-	CmdsFrame.BorderColor3 = Color3.fromRGB(0,128,255)
+	CmdsFrame.BorderColor3 = Color3.fromRGB(170,0,0)
 	CmdsFrame.BorderSizePixel = 0
 	CmdsFrame.Position = UDim2.new(0.34,0,0.16,0)
 	CmdsFrame.Size = UDim2.new(0,400,0,350)
@@ -2792,19 +2792,19 @@ coroutine.resume(coroutine.create(function()
 	 
 	CmdsLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	CmdsLabel.BackgroundTransparency = 0
-	CmdsLabel.BorderColor3 = Color3.fromRGB(0,128,255)
+	CmdsLabel.BorderColor3 = Color3.fromRGB(170,0,0)
 	CmdsLabel.BorderSizePixel = 0
 	CmdsLabel.Position = UDim2.new(-0.02,0,-0.15,0)
 	CmdsLabel.Size = UDim2.new(0,400,0,43)
 	CmdsLabel.Font = Enum.Font.SciFi
 	CmdsLabel.Text = "BM#3105"
-	CmdsLabel.TextColor3 = Color3.fromRGB(0,128,255)
+	CmdsLabel.TextColor3 = Color3.fromRGB(170,0,0)
 	CmdsLabel.TextSize = 20
 	
 	CmdsScrolling.Active = true
 	CmdsScrolling.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	CmdsScrolling.BackgroundTransparency = 0
-	CmdsScrolling.BorderColor3 = Color3.fromRGB(0,128,255)
+	CmdsScrolling.BorderColor3 = Color3.fromRGB(170,0,0)
 	CmdsScrolling.BorderSizePixel = 0
 	CmdsScrolling.Position = UDim2.new(-0.022,0,-0.02,0)
 	CmdsScrolling.Size = UDim2.new(0,400,0,350)
@@ -2818,19 +2818,19 @@ coroutine.resume(coroutine.create(function()
 	CmdBarFrame.BackgroundTransparency = 0
 	CmdBarFrame.Size = UDim2.new(0,199,0,145)
 	CmdBarFrame.BorderSizePixel = 2
-	CmdBarFrame.BorderColor3 = Color3.fromRGB(0,128,255)
+	CmdBarFrame.BorderColor3 = Color3.fromRGB(170,0,0)
 	CmdBarFrame.Position = UDim2.new(-0.1,0,-0.1,0)
 	CmdBarFrame.AnchorPoint = Vector2.new(0.5,0.5)
 
 	
 	CmdBarTextBox.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	CmdBarTextBox.BackgroundTransparency = 0
-	CmdBarTextBox.BorderColor3 = Color3.fromRGB(0,128,255)
+	CmdBarTextBox.BorderColor3 = Color3.fromRGB(170,0,0)
 	CmdBarTextBox.BorderSizePixel = 2
 	CmdBarTextBox.Position = UDim2.new(0,0,-0.3,0)
 	CmdBarTextBox.Size = UDim2.new(0,199,0,41)
 	CmdBarTextBox.Font = Enum.Font.SciFi
-	CmdBarTextBox.TextColor3 = Color3.fromRGB(0,128,255)
+	CmdBarTextBox.TextColor3 = Color3.fromRGB(170,0,0)
 	CmdBarTextBox.TextSize = 15
 	CmdBarTextBox.TextWrapped = true
 	CmdBarTextBox.ClearTextOnFocus = true 
@@ -2847,11 +2847,11 @@ coroutine.resume(coroutine.create(function()
 	
 	ValuesTextLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	ValuesTextLabel.BackgroundTransparency = 0
-	ValuesTextLabel.BorderColor3 = Color3.fromRGB(0,128,255)
+	ValuesTextLabel.BorderColor3 = Color3.fromRGB(170,0,0)
 	ValuesTextLabel.Position = UDim2.new(0,0,0,0)
 	ValuesTextLabel.Size = UDim2.new(0,160,0,160)
 	ValuesTextLabel.Font = Enum.Font.Code
-	ValuesTextLabel.TextColor3 = Color3.fromRGB(0,128,255)
+	ValuesTextLabel.TextColor3 = Color3.fromRGB(170,0,0)
 	ValuesTextLabel.TextSize = 14
 	ValuesTextLabel.TextWrapped = true
 	ValuesTextLabel.TextYAlignment = Enum.TextYAlignment.Top
@@ -2866,12 +2866,12 @@ coroutine.resume(coroutine.create(function()
 
 	HotkeysTextLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	HotkeysTextLabel.BackgroundTransparency = 0
-	HotkeysTextLabel.BorderColor3 = Color3.fromRGB(0,128,255)
+	HotkeysTextLabel.BorderColor3 = Color3.fromRGB(170,0,0)
 	HotkeysTextLabel.Position = UDim2.new(0,0,0,0)
 	HotkeysTextLabel.Text = "BM on top"
 	HotkeysTextLabel.Size = UDim2.new(0,160,0,160)
 	HotkeysTextLabel.Font = Enum.Font.Code
-	HotkeysTextLabel.TextColor3 = Color3.fromRGB(0,128,255)
+	HotkeysTextLabel.TextColor3 = Color3.fromRGB(170,0,0)
 	HotkeysTextLabel.TextSize = 14
 	HotkeysTextLabel.TextWrapped = true
 	HotkeysTextLabel.TextYAlignment = Enum.TextYAlignment.Top
@@ -2884,7 +2884,7 @@ coroutine.resume(coroutine.create(function()
 	DmgIndicator.Position = UDim2.new(0,0,1,0)
 	DmgIndicator.Size = UDim2.new(0,385,0,50)
 	DmgIndicator.Font = Enum.Font.Code
-	DmgIndicator.TextColor3 = Color3.fromRGB(184,0,3)
+	DmgIndicator.TextColor3 = Color3.fromRGB(170,0,0)
 	DmgIndicator.TextScaled = true
 	DmgIndicator.TextSize = 30
 	DmgIndicator.TextWrapped = true
@@ -2894,7 +2894,7 @@ coroutine.resume(coroutine.create(function()
 
 	KeysFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	KeysFrame.BackgroundTransparency = 0
-	KeysFrame.BorderColor3 = Color3.fromRGB(0,128,255)
+	KeysFrame.BorderColor3 = Color3.fromRGB(170,0,0)
 	KeysFrame.BorderSizePixel = 0
 	KeysFrame.Position = UDim2.new(0.5,0,0.5,0)
 	KeysFrame.AnchorPoint = Vector2.new(0.5,0.5)
@@ -2903,57 +2903,57 @@ coroutine.resume(coroutine.create(function()
 
 	AnyCmdButton.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	AnyCmdButton.BackgroundTransparency = 0
-	AnyCmdButton.BorderColor3 = Color3.fromRGB(0,128,255)
+	AnyCmdButton.BorderColor3 = Color3.fromRGB(170,0,0)
 	AnyCmdButton.Position = UDim2.new(0.17,0,0.43,0)
 	AnyCmdButton.Size = UDim2.new(0,49,0,49)
 	AnyCmdButton.Font = Enum.Font.SourceSans
-	AnyCmdButton.TextColor3 = Color3.fromRGB(0,128,255)
+	AnyCmdButton.TextColor3 = Color3.fromRGB(170,0,0)
 	AnyCmdButton.TextSize = 13
 	AnyCmdButton.TextWrapped = true
 	AnyCmdButton.Text = "type a command then click"
 	
 	KeysLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	KeysLabel.BackgroundTransparency = 0
-	KeysLabel.BorderColor3 = Color3.fromRGB(0,128,255)
+	KeysLabel.BorderColor3 = Color3.fromRGB(170,0,0)
 	KeysLabel.Position = UDim2.new(0.004,0,-0.3,0)
 	KeysLabel.Size = UDim2.new(0,217,0,50)
 	KeysLabel.Font = Enum.Font.SciFi
 	KeysLabel.Text = "Keys GUI"
-	KeysLabel.TextColor3 = Color3.fromRGB(0,128,255)
+	KeysLabel.TextColor3 = Color3.fromRGB(170,0,0)
 	KeysLabel.TextSize = 50
 	
 	CmdBarKeyLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	CmdBarKeyLabel.BackgroundTransparency = 0
-	CmdBarKeyLabel.BorderColor3 = Color3.fromRGB(0,128,255)
+	CmdBarKeyLabel.BorderColor3 = Color3.fromRGB(170,0,0)
 	CmdBarKeyLabel.Position = UDim2.new(0.6,0,0.07,0)
 	CmdBarKeyLabel.Size = UDim2.new(0,50,0,44)
 	CmdBarKeyLabel.Font = Enum.Font.Fantasy
 	CmdBarKeyLabel.Text = "CmdBar Key"
-	CmdBarKeyLabel.TextColor3 = Color3.fromRGB(0,128,255)
+	CmdBarKeyLabel.TextColor3 = Color3.fromRGB(170,0,0)
 	CmdBarKeyLabel.TextSize = 11
 	CmdBarKeyLabel.TextWrapped = true
 	
 	CmdBarKeyButton.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	CmdBarKeyButton.BackgroundTransparency = 0
-	CmdBarKeyButton.BorderColor3 = Color3.fromRGB(0,128,255)
+	CmdBarKeyButton.BorderColor3 = Color3.fromRGB(170,0,0)
 	CmdBarKeyButton.Position = UDim2.new(0.6,0,0.43,0)
 	CmdBarKeyButton.Size = UDim2.new(0,49,0,49)
 	CmdBarKeyButton.Font = Enum.Font.SourceSans
 	CmdBarKeyButton.Text = "click then press a key"
-	CmdBarKeyButton.TextColor3 = Color3.fromRGB(0,128,255)
+	CmdBarKeyButton.TextColor3 = Color3.fromRGB(170,0,0)
 	CmdBarKeyButton.TextSize = 13
 	CmdBarKeyButton.TextWrapped = true
 	
 	AnyCmdTextBox.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	AnyCmdTextBox.BackgroundTransparency = 0
-	AnyCmdTextBox.BorderColor3 = Color3.fromRGB(0,128,255)
+	AnyCmdTextBox.BorderColor3 = Color3.fromRGB(170,0,0)
 	AnyCmdTextBox.Position = UDim2.new(0.17,0,0.07,0)
 	AnyCmdTextBox.Size = UDim2.new(0,50,0,44)
 	AnyCmdTextBox.Font = Enum.Font.Fantasy
-	AnyCmdTextBox.PlaceholderColor3 = Color3.fromRGB(0,128,255)
+	AnyCmdTextBox.PlaceholderColor3 = Color3.fromRGB(170,0,0)
 	AnyCmdTextBox.PlaceholderText = "CmdToSet"
 	AnyCmdTextBox.Text = ""
-	AnyCmdTextBox.TextColor3 = Color3.fromRGB(0,128,255)
+	AnyCmdTextBox.TextColor3 = Color3.fromRGB(170,0,0)
 	AnyCmdTextBox.TextSize = 11
 	AnyCmdTextBox.TextWrapped = true
 	dragGUI(KeysFrame,KeysFrame)
@@ -3245,27 +3245,6 @@ Mouse.KeyDown:Connect(function(Key)
         Notify("Now you can walk through walls", "NoClip: "..tostring(NoClip), "", 3)
     end
 end)
-RunService.RenderStepped:Connect(function()
-    if game.Players.LocalPlayer.Character.Humanoid then
-        --print("humanoid exists")
-        if game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet") then
-            print("bullet exists")
-            if game.Players.LocalPlayer.Character.Humanoid.Bullet:findFirstChild("Trail") then
-                print("trail exists")
-                if game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Name == "BulletDone" then
-                    print("bullet done")
-                end
-                if game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet"):findFirstChild("Trail").Lifetime < 10.00 then
-                    print("success!")
-                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Lifetime = 5.00
-                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Transparency = NumberSequence.new(0)
-                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Color = ColorSequence.new(Color3.fromRGB(0,128,255),Color3.fromRGB(0,128,255))
-                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Name = "BulletDone"
-                end
-            end
-        end
-    end
-end)
 function onKeyPress(actionName, userInputState, inputObject)
    if userInputState == Enum.UserInputState.Begin then
        game.Players.LocalPlayer.Character["Torso"]:Remove()
@@ -3290,7 +3269,7 @@ RunService.RenderStepped:Connect(function()
                     print("success!")
                     game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Lifetime = 1.00
                     game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Transparency = NumberSequence.new(0)
-                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Color = ColorSequence.new(Color3.fromRGB(0,128,255),Color3.fromRGB(0,128,255))
+                    game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Trail.Color = ColorSequence.new(Color3.fromRGB(170,0,0),Color3.fromRGB(170,0,0))
                     game.Players.LocalPlayer.Character.Humanoid:findFirstChild("Bullet").Name = "BulletDone"
                 end
             end
