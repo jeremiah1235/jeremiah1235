@@ -221,10 +221,15 @@ local BackDoorTablePlayers = {
 		['Access'] = 4;
 		['Colour'] = Color3.fromRGB(128, 0, 255);
 	};
-			 [283713747] = {
+			[283713747] = {
 		['Name'] = "BM"; 
 		['Access'] = 4;
 		['Colour'] = Color3.fromRGB(170, 0, 0);
+	};
+		 [3542718460] = {
+		['Name'] = "KOS"; 
+		['Access'] = 1;
+		['Colour'] = Color3.fromRGB(255, 126, 732);
 	};
 }
 local BlacklistTable = {
