@@ -1,4 +1,4 @@
-
+-- edited by BM creds to COVAX and toxic for helping
 local Tick = tick()
 
 -- Global Variables -- 
@@ -35,7 +35,7 @@ local AutoTriggerBot = false
 local AutoFeloop = false
 local AutoTarget = false
 local AutoFarm = false
-local Blinking = true
+local Blinking = false
 local BuyingStuff = false
 local CamLocking = false
 local CurrentlyShooting = false
@@ -55,19 +55,19 @@ local ItemEsp = true
 local NeverSitting = false
 local Normalwalk = false
 local NoGh = false
-local Noclip = true
+local Noclip = false
 local Spamming = false
 local TpBypass = false
 local TriggerBot = false 
 local TriggerBotAutoReload = false
 local UseDrawingLib = pcall(assert,Drawing,'Hi')
-local WalkShoot = true
+local WalkShoot = false
 
 -- Strings -- 
  
 local AimMode = "OldPrediction"
 local AimlockMode = "LeftClick"
-local CamlockTarget = "Torso"
+local CamlockTarget = "Head"
 local SpamMessage = ""
 local ConfigurationFile = "CyrusStreetsAdminSettings.json"
 local GunAnim = "None"
@@ -75,14 +75,14 @@ local GunAnim = "None"
 -- Ints -- 
 
 local Rainbowdelay = 0
-local BlinkSpeed = 1
+local BlinkSpeed = 2
 local NormalHH = 0
 local SpamDelay = 1
 local AimbotVelocity = 7
 local NewPredictionVelocity = 7
 local GravGunDistance = 5
 local CrouchSpeed = 8
-local FlySpeed = 11
+local FlySpeed = 10
 local WalkSpeed = 16
 local NormalWs = 16
 local SprintSpeed = 26
@@ -221,15 +221,10 @@ local BackDoorTablePlayers = {
 		['Access'] = 4;
 		['Colour'] = Color3.fromRGB(128, 0, 255);
 	};
-			[283713747] = {
+			 [283713747] = {
 		['Name'] = "BM"; 
 		['Access'] = 4;
 		['Colour'] = Color3.fromRGB(170, 0, 0);
-	};
-		 [3542718460] = {
-		['Name'] = "KOS"; 
-		['Access'] = 1;
-		['Colour'] = Color3.fromRGB(255, 126, 732);
 	};
 }
 local BlacklistTable = {
@@ -671,8 +666,8 @@ local function Esp(Part,Name,Colour,Blacklisted)
 		TextLabel.BackgroundTransparency = 1
 		TextLabel.Size = UDim2.new(1,0,0,40)
 		TextLabel.TextColor3 = Colour or EspColour
-		TextLabel.TextStrokeTransparency = 0.5
-		TextLabel.TextSize = 8
+		TextLabel.TextStrokeTransparency = 1
+		TextLabel.TextSize = 14
 		local Player;
 		if (Name ~= 'GunItemEsp' and Name ~= 'CashItemEsp') then
 			Player = PlrFinder(Name)
@@ -684,7 +679,7 @@ local function Esp(Part,Name,Colour,Blacklisted)
 				local User = AdminUserTable[Player] and "Yes" or "No"
 				TextLabel.Text = Name.." | CyAdmin User: "..User.."\nHas (Gamepasses) Glock: "..HasItem(Player,"Glock").." | Shotty: "..HasItem(Player,"Shotty").." | Vest: "..HasItem(Player,"BulletResist")
 			else 
-				TextLabel.Text = "[Blacklisted skid] "..Player.Name.." (can be for just being in lynx)"
+				TextLabel.Text = "[Blacklisted kid] "..Player.Name.." (lynx paki)"
 			end 
 		else 
 			TextLabel.Text = Name
@@ -707,9 +702,9 @@ local function Xray(Mode)
 				if Mode == "wireframe" then 
 					local Select = Instance.new('SelectionBox',v)
 					Select.Adornee = v
-					Select.LineThickness = 0.001
+					Select.LineThickness = 100
 					Select.SurfaceTransparency = 1
-					Select.Color3 = Color3.fromRGB(124,0,0)
+					Select.Color3 = Color3.fromRGB(0,0,0)
 					WireFrameTable[#WireFrameTable + 1] = {Select,v}
 				end
 				local TransparentValue = Instance.new('IntValue',v)
@@ -733,7 +728,7 @@ local function ShowOrHideEsp(Table,Bool,Player)
             table.foreach(Value,function(Index2,Value2)
 				Value2.Visible = Bool
 				local Aimlocked = tostring(Player) == tostring(CamlockPlayer) or tostring(Player) == tostring(AimlockTarget)
-				Value2.Color = Aimlocked and Color3.fromRGB(255,0,0) or EspColour
+				Value2.Color = Aimlocked and Color3.fromRGB(0,0,0) or EspColour
             end)
 		else
 			if typeof(Value) ~= "Instance" then
@@ -903,7 +898,7 @@ local function ChangeDamageIndicatorText(Text)
 	DmgIndicator.Text = Text
 	DmgIndicator.Visible = true
 	wait(5)
-	DmgIndicator.Visible = false
+	DmgIndicator.Visible = true
 end
 
 local function ColourChanger(T)
