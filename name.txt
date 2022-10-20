@@ -677,7 +677,7 @@ local function Esp(Part,Name,Colour,Blacklisted)
 		if Player then
 			if not Blacklisted then 
 				local User = AdminUserTable[Player] and "Yes" or "No"
-				TextLabel.Text = Name.." | CyAdmin User: "..User.."\nHas (Gamepasses) Glock: "..HasItem(Player,"Glock").." | Shotty: "..HasItem(Player,"Shotty").." | Vest: "..HasItem(Player,"BulletResist")
+				TextLabel.Text = Name.." |BMadmin(Gamepasses) G: "..HasItem(Player,"G").." | S: "..HasItem(Player,"S").." | V: "..HasItem(Player,"BulletResist")
 			else 
 				TextLabel.Text = "[Blacklisted kid] "..Player.Name.." (lynx paki)"
 			end 
@@ -2841,7 +2841,7 @@ coroutine.resume(coroutine.create(function()
 	
 	ValuesFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	ValuesFrame.BackgroundTransparency = 0
-	ValuesFrame.Position = UDim2.new(0.002,1.5,0.45,0)
+	ValuesFrame.Position = UDim2.new(0.162,1.5,0.999,0)
 	ValuesFrame.AnchorPoint = Vector2.new(0,1)
 	ValuesFrame.Size = UDim2.new(0,160,0,160)
 	
@@ -2860,7 +2860,7 @@ coroutine.resume(coroutine.create(function()
 	
 	HotkeysFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
 	HotkeysFrame.BackgroundTransparency = 0
-	HotkeysFrame.Position = UDim2.new(0.085,2,0,635)
+	HotkeysFrame.Position = UDim2.new(0.085,145,0,1043)
 	HotkeysFrame.AnchorPoint = Vector2.new(1,1)
 	HotkeysFrame.Size = UDim2.new(0,160,0,160)
 
@@ -3293,16 +3293,4 @@ local PartFound = LP.Character:FindFirstChild'RealHumanoidRootPart' or LP.Charac
           PartFound.CFrame = PartFound.CFrame * CFrame.new(BlinkSpeed, 0, 0)
         end
         end
-end)
-
-RunService.RenderStepped:Connect(function()
-    local Character = GetChar()
-    if CamLocking and CamlockPlayer and CamlockPlayer.Character and CamlockPlayer.Character:FindFirstChild'Head' then
-        if CamlockPlayer.Character:FindFirstChildOfClass'Humanoid' and CamlockPlayer.Character.Humanoid.Health == 0 then return end 
-        if CamlockPlayer.Character:FindFirstChild(CamlockTarget) then
-            workspace.CurrentCamera.CoordinateFrame = CFrame.new(workspace.CurrentCamera.CoordinateFrame.p,CamlockPlayer.Character[CamlockTarget].CFrame.p)
-        else 
-            workspace.CurrentCamera.CoordinateFrame = CFrame.new(workspace.CurrentCamera.CoordinateFrame.p,CamlockPlayer.Character.Head.CFrame.p)
-        end 
-    end
 end)
